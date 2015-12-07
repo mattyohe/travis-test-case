@@ -29,9 +29,10 @@ class FailingTestTests: XCTestCase {
 
         let expect = self.expectationWithDescription("Expectation")
         dispatch_async(dispatch_queue_create("Label", DISPATCH_QUEUE_CONCURRENT)) {
+            
+            expect.fulfill()
             sleep(2)
-            expect.fulfill()
-            expect.fulfill()
+            XCTAssertEqual(1, 1)
         }
 
         self.waitForExpectationsWithTimeout(1, handler: nil)
