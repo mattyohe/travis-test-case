@@ -1,0 +1,2 @@
+language: objective-c
+script: xcodebuild test -scheme FailingTest -destination 'platform=iOS Simulator,name=iPhone 6 Plus'
